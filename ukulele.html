@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>ukulele.js</title>
+		<script src='waves.js'></script>
+		<script src='sound.js'></script>
+		
+		
+		<script src='instrument/noteUtil.js'></script>
+
+		<script src='instrument/ukuleleClassic.js'></script>
+		<script src='instrument/ukuleleChord.js'></script>
+		<script src='instrument/ukuleleString.js'></script>
+		<script src='instrument/ukulele.js'></script>
+
+		<script>	
+			function playCord() {
+				ukulele.playChordScript("major/C/8 minor/E/8 minor/A/4 major/G/4 major/F/8 major/C/8 minor/E/8 minor/A/4 major/G/4 ")
+			}
+			
+		</script>
+	</head>
+	<body onload='ukulele.init()'>
+		<input type='button' value='Play' onclick='javascript:playCord()'>
+		<canvas id='main'>
+		</canvas>
+	</body>
+</html>
