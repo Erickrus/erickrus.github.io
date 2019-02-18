@@ -1,3 +1,21 @@
+var chordOffset = [0,0,0,0];
+var currChord = "C";
+var currMode = "major";
+
+function setChord(chordName) {
+	currChord = chordName;
+	for (var i=0;i<4;i++) {
+		chordOffset[i] = ukulele.chord.chordTable[currMode][currChord][i];
+	}
+}
+
+function setMode(modeName) {
+	currMode = modeName;
+	for (var i=0;i<4;i++) {
+		chordOffset[i] = ukulele.chord.chordTable[currMode][currChord][i];
+	}
+}
+
 
 var stringSprites = [];
 for (var i=0;i<4;i++) {
@@ -13,14 +31,14 @@ for (var i=0;i<4;i++) {
 	    if (e.buttons == 0) return;
 		console.log(this.spriteName + " static clicked");
 		var stringPos = this.spriteName.substring(this.spriteName.length-1);
-		ukulele.strings[stringPos].play(12);
+		ukulele.strings[stringPos].play(12 + chordOffset[stringPos]);
 	  }
 	  
     stringSprites[i]["string_viberating"].onMouseMove = function(e){
 	    if (e.buttons == 0) return;
 		console.log(this.spriteName + " static clicked");
 		var stringPos = this.spriteName.substring(this.spriteName.length-1);
-		ukulele.strings[stringPos].play(12);
+		ukulele.strings[stringPos].play(12+ chordOffset[stringPos]);
 	  }
 	  
 	ukulele.strings[i].onStringStart = function() {
@@ -28,9 +46,8 @@ for (var i=0;i<4;i++) {
 	}
 	
 	ukulele.strings[i].onStringStop = function() {
-		setTimeout('spriteManager.update(stringSprites['+this.pos+']["string_static"], "string"+'+this.pos+');',750);
+		setTimeout('spriteManager.update(stringSprites['+this.pos+']["string_static"], "string"+'+this.pos+');',0);
 	}
-	
 }
 
 	  
