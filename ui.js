@@ -41,7 +41,7 @@ function setMode(modeName) {
 	}
 	
 	
-	var modeIds = ["major","minor","7","7m","7maj"];
+	var modeIds = ["major","minor","7","m7","maj7"];
 	for (var i=0;i<modeIds.length;i++) {
 		if (modeName!= modeIds[i]) {
 			document.getElementById(modeIds[i]).style["font-weight"] = "normal";
