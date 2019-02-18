@@ -1,18 +1,55 @@
 var chordOffset = [0,0,0,0];
-var currChord = "C";
+var currChord = "NONE";
 var currMode = "major";
 
+
+
 function setChord(chordName) {
-	currChord = chordName;
-	for (var i=0;i<4;i++) {
-		chordOffset[i] = ukulele.chord.chordTable[currMode][currChord][i];
+	if (chordName == "NONE") {
+		chordOffset = [0,0,0,0];
+	} else {
+		currChord = chordName;
+		for (var i=0;i<4;i++) {
+			chordOffset[i] = ukulele.chord.chordTable[currMode][currChord][i];
+		}
 	}
+	var chordIds = ["C","D","E","F","G","A","B","CS","DS","FS","GS","AS","NONE"];
+	var updatedChordName = chordName;
+	if (updatedChordName.length > 1 && updatedChordName!="NONE") {
+		updatedChordName = updatedChordName[0] +"S";
+	}
+	for (var i=0;i<chordIds.length;i++) {
+		if (updatedChordName!= chordIds[i]) {
+			document.getElementById(chordIds[i]).style["font-weight"] = "normal";
+			document.getElementById(chordIds[i]).style["color"] = "#000000";
+		} else {
+			document.getElementById(chordIds[i]).style["font-weight"] = "bolder";
+			document.getElementById(chordIds[i]).style["color"] = "#ae632e";
+		}
+	}
+	document.getElementById(chordIds[i])
 }
 
 function setMode(modeName) {
 	currMode = modeName;
-	for (var i=0;i<4;i++) {
+	if (currChord == "NONE") {
+		chordOffset[i] = [0,0,0,0];
+	} else {
+		for (var i=0;i<4;i++) {
 		chordOffset[i] = ukulele.chord.chordTable[currMode][currChord][i];
+	}
+	}
+	
+	
+	var modeIds = ["major","minor","7","7m","7maj"];
+	for (var i=0;i<modeIds.length;i++) {
+		if (modeName!= modeIds[i]) {
+			document.getElementById(modeIds[i]).style["font-weight"] = "normal";
+			document.getElementById(modeIds[i]).style["color"] = "#000000";
+		} else {
+			document.getElementById(modeIds[i]).style["font-weight"] = "bolder";
+			document.getElementById(modeIds[i]).style["color"] = "#ae632e";
+		}
 	}
 }
 

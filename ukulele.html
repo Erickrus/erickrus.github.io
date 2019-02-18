@@ -60,27 +60,29 @@
 	  <br/>
 	  <br/>
 	  &nbsp;
-	  <input type="button" value="C#"  onclick='setChord("C#/Db")' />
-	  <input type="button" value="D#"  onclick='setChord("D#/Eb")' />
-	  &nbsp;&nbsp;
-	  <input type="button" value="F#"  onclick='setChord("F#/Gb")' />
-	  <input type="button" value="G#"  onclick='setChord("G#/Ab")' />
-	  <input type="button" value="A#"  onclick='setChord("A#/Bb")' />
+	  <input id="CS" type="button" value="C#"  onclick='setChord("C#/Db")' />
+	  <input id="DS" type="button" value="D#"  onclick='setChord("D#/Eb")' />
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	  <input id="FS" type="button" value="F#"  onclick='setChord("F#/Gb")' />
+	  <input id="GS" type="button" value="G#"  onclick='setChord("G#/Ab")' />
+	  <input id="AS" type="button" value="A#"  onclick='setChord("A#/Bb")' />
 	  <br/>
-	  <input type="button" value="C" onclick='setChord("C")' />
-	  <input type="button" value="D" onclick='setChord("D")' />
-	  <input type="button" value="E" onclick='setChord("E")' />
+	  <input id="C" type="button" value="C" onclick='setChord("C")' />
+	  <input id="D" type="button" value="D" onclick='setChord("D")' />
+	  <input id="E" type="button" value="E" onclick='setChord("E")' />
 	  &nbsp;&nbsp;
-	  <input type="button" value="F" onclick='setChord("F")' />
-	  <input type="button" value="G" onclick='setChord("G")' />
-	  <input type="button" value="A" onclick='setChord("A")' />
-	  <input type="button" value="B" onclick='setChord("B")' />
+	  <input id="F" type="button" value="F" onclick='setChord("F")' />
+	  <input id="G" type="button" value="G" onclick='setChord("G")' />
+	  <input id="A" type="button" value="A" onclick='setChord("A")' />
+	  <input id="B" type="button" value="B" onclick='setChord("B")' />
+	  &nbsp;&nbsp;
+	  <input id="NONE" type="button" value="NONE" onclick='setChord("NONE")' style="font-weight:bolder;color:#ae632e" />
 	  <br/>
-	  <input type="button" value="major" onclick='setMode("major")' />
-	  <input type="button" value="minor" onclick='setMode("minor")' />
-	  <input type="button" value="7" onclick='setMode("7")' />
-	  <input type="button" value="maj7" onclick='setMode("maj7")' />
-	  <input type="button" value="m7" onclick='setMode("m7")' />
+	  <input id="major" type="button" value="major" onclick='setMode("major")'  style="font-weight:bolder;color:#ae632e" />
+	  <input id="minor" type="button" value="minor" onclick='setMode("minor")' />
+	  <input id="7" type="button" value="7" onclick='setMode("7")' />
+	  <input id="maj7" type="button" value="maj7" onclick='setMode("maj7")' />
+	  <input id="m7" type="button" value="m7" onclick='setMode("m7")' />
 	  <br/>
       <canvas id="canvas" width="200" height="250">
          Canvas is not supported.
